@@ -11,6 +11,10 @@ public class Challenge {
 		System.out.print("\n");
 		
 		System.out.println("----- sumDigits() Tests -----");
+		sumDigits(1, new String[] {"ab1231da"});
+		System.out.println("-----");
+		sumDigits(5, new String[] {"", "12345", "kjfkdaslghslkjekjfkldjsalkfja", "12kjkj34klsdfhj56", "0987654321f"});
+		
 	}
 	
 	public static void secondMax(int N, int[][] tuples) {
@@ -32,6 +36,20 @@ public class Challenge {
 			}
 			
 			System.out.println(workingTuple[1]);
+		}
+	}
+	
+	public static void sumDigits(int T, String[] strings) {
+		for (int i = 0; i < T; i++) {
+			int sum = 0;
+			
+			for (int j = 0; j < strings[i].length(); j++) {
+				if (strings[i].charAt(j) >= '0' && strings[i].charAt(j) <= '9') {
+					sum += Integer.parseInt(String.valueOf(strings[i].charAt(j)));
+				}
+			}
+			
+			System.out.println(sum);
 		}
 	}
 	
